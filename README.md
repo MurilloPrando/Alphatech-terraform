@@ -1,5 +1,4 @@
-O ChatGPT disse:
-Claro. Segue somente o conteúdo em Markdown, pronto para copiar e colar no README.md:
+
 
 # Laboratório Terraform + Docker
 

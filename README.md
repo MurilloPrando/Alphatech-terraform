@@ -1,21 +1,25 @@
-Laboratório Terraform + Docker
-📌 Visão geral
+O ChatGPT disse:
+Claro. Segue somente o conteúdo em Markdown, pronto para copiar e colar no README.md:
 
-Neste laboratório, será utilizado o Terraform para provisionar e gerenciar um ambiente Docker, utilizando o Docker Provider.
+# Laboratório Terraform + Docker
 
-A infraestrutura será composta por:
+## 📌 Visão geral
 
-Uma rede Docker;
-Um container Web baseado em Nginx;
-Um container Redis;
-Uma porta HTTP publicada para acesso ao serviço Web;
-Recursos declarados em arquivos Terraform;
-Documentação técnica;
-Histórico versionado utilizando Git.
-🏗️ Arquitetura
+Neste laboratório, será utilizado o **Terraform** para provisionar e gerenciar um ambiente Docker utilizando o **Docker Provider**.
 
-A estrutura do ambiente pode ser representada da seguinte forma:
+A arquitetura do laboratório é composta por:
 
+- Uma rede Docker;
+- Um container Web baseado em **Nginx**;
+- Um container **Redis**;
+- Uma porta HTTP publicada para acesso ao serviço Web;
+- Recursos declarados em arquivos Terraform;
+- Documentação técnica;
+- Histórico versionado utilizando **Git**.
+
+## 🏗️ Arquitetura
+
+```text
 Terraform
     │
     ▼
@@ -28,8 +32,11 @@ Provider Docker
              ┌──────┴──────┐
              ▼             ▼
            Nginx          Redis
+```
 
-Fluxo de comunicação
+## 🌐 Fluxo de comunicação
+
+```text
                     COMPUTADOR
                          │
                          │ HTTP :8080
@@ -46,80 +53,84 @@ Fluxo de comunicação
                  │      REDIS      │
                  │                 │
                  └─────────────────┘
+```
 
+O acesso ao serviço Web ocorre através da porta **8080** do computador, que encaminha as requisições para o container **Nginx**.
 
-O acesso ao serviço Web ocorre através da porta 8080 do computador, que encaminha as requisições para o container Nginx.
+O **Nginx** e o **Redis** estão conectados por meio da rede Docker **AlphaTech**, permitindo a comunicação entre os containers.
 
-O Nginx e o Redis estão conectados por meio da rede Docker AlphaTech, permitindo a comunicação entre os containers.
+## 🛠️ Tecnologias utilizadas
 
-🛠️ Tecnologias utilizadas
-Terraform — Provisionamento e gerenciamento da infraestrutura;
-Docker — Plataforma de containers;
-Nginx — Servidor Web;
-Redis — Banco de dados em memória;
-Git — Controle de versão.
-🚀 Execução do Terraform
+- **Terraform** — Provisionamento e gerenciamento da infraestrutura;
+- **Docker** — Plataforma de containers;
+- **Nginx** — Servidor Web;
+- **Redis** — Banco de dados em memória;
+- **Git** — Controle de versão.
 
-Após configurar os arquivos do projeto, execute os comandos abaixo na ordem apresentada.
+## 🚀 Execução do Terraform
 
-1. Inicializar o Terraform
+### 1. Inicializar o Terraform
 
 Inicializa o diretório de trabalho e instala os providers necessários.
 
+```bash
 terraform init
+```
 
-2. Validar a configuração
+### 2. Validar a configuração
 
 Verifica se os arquivos de configuração do Terraform estão sintaticamente corretos.
 
+```bash
 terraform validate
+```
 
-3. Visualizar o plano de execução
+### 3. Visualizar o plano de execução
 
 Apresenta quais recursos serão criados, alterados ou removidos.
 
+```bash
 terraform plan
+```
 
-4. Aplicar a infraestrutura
+### 4. Aplicar a infraestrutura
 
 Cria os recursos definidos nos arquivos Terraform.
 
+```bash
 terraform apply
+```
 
+Após a execução, o serviço Web poderá ser acessado através de:
 
-Após a execução, o serviço Web poderá ser acessado através da porta:
-
+```text
 http://localhost:8080
+```
 
-📂 Estrutura do projeto
+## 📂 Estrutura do projeto
 
-Uma possível organização dos arquivos é:
-
+```text
 .
 ├── main.tf
 ├── variables.tf
 ├── outputs.tf
 ├── README.md
 └── .gitignore
+```
 
-📖 Objetivo do laboratório
+## 🎯 Objetivo do laboratório
 
-O objetivo deste laboratório é praticar o uso do Terraform como ferramenta de Infrastructure as Code (IaC), utilizando o Docker como ambiente de infraestrutura.
+O objetivo deste laboratório é praticar o uso do **Terraform como ferramenta de Infrastructure as Code (IaC)**, utilizando o Docker como ambiente de infraestrutura.
 
 Durante o laboratório, são abordados conceitos como:
 
-Provisionamento de recursos com Terraform;
-Utilização de providers;
-Criação e configuração de redes Docker;
-Gerenciamento de containers;
-Publicação de portas;
-Comunicação entre containers;
-Validação e planejamento de infraestrutura;
-Versionamento do código de infraestrutura com Git.
+- Provisionamento de recursos com Terraform;
+- Utilização de providers;
+- Criação e configuração de redes Docker;
+- Gerenciamento de containers;
+- Publicação de portas;
+- Comunicação entre containers;
+- Validação e planejamento da infraestrutura;
+- Versionamento do código de infraestrutura com Git.
 
-ACESSO:
-http://localhost:8080/
-
-
-
-
+ACESSO: http://localhost:8080
